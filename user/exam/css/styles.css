@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+nav {
+    background-color: #888eb7;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2rem 16px;
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  height: 1500px; /* Just for demonstration, adjust height as needed */
+  position: relative;
+}
+
+.sidebar {
+  width: 200px; /* Adjust the width as needed */
+  height: 100%;
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.container {
+    width: 100%;
+    height: 1500px; 
+    position: absolute;
+  }
+
+  .sidebar {
+    width: 200px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #f4f4f4;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .account {
+    width: 200px;
+    height: 140px;
+    background-color: #414e8e;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    margin-bottom: 20px;
+    margin-top: 5rem;
+    
+  }
+  .submit-box {
+    margin-top: 300%; /* Push to the bottom */
+    position: relative;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .test {
+    display: flex;
+    position: absolute;
+    margin-top: 5rem;
+    margin-left: 1rem;
+  }
