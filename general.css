@@ -23,6 +23,7 @@ strong {
 
 /* general component */
 
+
 .grid {
   display: grid;
   column-gap: 6.4rem;
@@ -151,26 +152,6 @@ strong {
   border-bottom: 1px solid transparent;
 }
 
-.meal-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.meal-list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
-
-.meal-list-item {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  line-height: 1.2;
-}
 
 *:focus {
   outline: none;
