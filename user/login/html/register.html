@@ -27,21 +27,29 @@
           <div class="col">
             <form action="" class="login__main__form" method="post">
               <div class="login__flex">
-                <label for="login__user">Tài khoản</label>
+                <label for="register__user">Tài khoản</label>
                 <input
                   type="text"
                   name="username"
-                  id="login__user"
+                  id="register__user"
                   value=""
                   autofocus=""
                 />
               </div>
               <div class="login__flex">
-                <label for="login__pw">Mật khẩu</label>
+                <label for="register__pw">Mật khẩu</label>
                 <input
                   type="password"
                   name="password"
-                  id="login__pw"
+                  id="register__pw"
+                />
+              </div>
+              <div class="login__flex">
+                <label for="register__pw__again">Nhập lại mật khẩu</label>
+                <input
+                  type="password"
+                  name="password__again"
+                  id="register__pw__again"
                 />
               </div>
               <div class="login__flex horizontal">
@@ -58,16 +66,15 @@
                   >Quên mật khẩu?</a
                 >
               </div>
-              <button type="button" class="login__btn"><span>Đăng nhập</span></button>
+              <button type="button" class="register__btn"><span>Đăng ký</span></button>
 
               <div class="login__margin__top account">
-                <p>Chưa có tài khoản? <a href="register.html">Đăng Ký</a></p>
-              </div>
+                <p>Đã có tài khoản? <a href="index.html">Đăng Nhập</a></p>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="../js/register.js"></script>
   </body>
 </html>

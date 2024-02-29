@@ -6,6 +6,10 @@
   margin-bottom: 1rem;
 }
 
+.login__margin__top {
+  margin-top: 1.8rem;
+}
+
 .login__logo {
   width: auto;
 }
@@ -73,4 +77,8 @@
   border: none;
   background-color: red;
   color: white;
+}
+
+.account {
+  font-size: 1.4rem;
 }
