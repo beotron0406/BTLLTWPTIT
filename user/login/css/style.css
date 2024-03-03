@@ -82,3 +82,8 @@
 .account {
   font-size: 1.4rem;
 }
+
+.login__btn:hover,
+.register__btn:hover {
+  cursor: pointer;
+}
