@@ -4,14 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
+
 <title>Navigation Bar with Logo, Countdown, and Logout Button</title>
 </head>
 <body>
-    
     <nav>
         <ul>
           <li class="logo"><a href="#">Thi PTIT</a></li>
-          <li class="countdown">50:00</li>
+          <li>
+            <div id="countdown" class="countdown">
+              <ul>
+                <li><span id="minutes">50</span></li>
+                <li class="separator">:</li>
+                <li><span id="seconds">00</span></li>
+              </ul>
+            </div>
+          </li>
           <li class="logout"><a href="#">Logout</a></li>
         </ul>
     </nav>
@@ -19,17 +27,19 @@
     <div class="container">
         <div class="sidebar">
             <div class="account">
-                <img class="avatar" src="default-avatar-profile.jpg" alt="Avatar" width="30" height="30">
+                <div class="account-img">
+                  <img class="avatar" src="default-avatar-profile.jpg" alt="Avatar" width="30" height="30">
+                </div>
                 <span>Account Name</span>
             </div>
             <div class="submit-box">
-                <button class="submit-button">Submit</button>
+                <button class="submit-button" id="submitButton">Submit</button>
             </div>
         </div>
     </div>
     
     <div class="test">
-        <form class="testform">
+        <form class="testform" id="testForm" action="page.html" method="post">
             <div>
               <p>Question 1:</p>
               <label>
@@ -161,8 +171,8 @@
             <!-- Add more divs for additional questions -->
             <br>
           
-            <button type="submit">Submit</button>
           </form>
     
     </div>
+    <script src="testmain.js" defer></script>
 </body>
