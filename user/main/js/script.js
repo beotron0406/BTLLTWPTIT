@@ -5,8 +5,8 @@ const exams = [
     name: "Midterm Exam 1",
     category: "Midterm",
     state: "Specific Time",
-    startTime: "2024-03-01T09:00:00",
-    endTime: "2024-03-04T12:00:00",
+    startTime: "2024-03-04T09:00:00",
+    endTime: "2024-03-06T12:00:00",
   },
   { name: "Midterm Exam 2", category: "Midterm", state: "Join Anytime" },
   {
@@ -14,7 +14,7 @@ const exams = [
     category: "Endterm",
     state: "Specific Time",
     startTime: "2024-03-15T09:00:00",
-    endTime: "2024-03-15T12:00:00",
+    endTime: "2024-03-16T12:00:00",
   },
   // Add more exam data as needed
 ];
@@ -29,6 +29,7 @@ function renderExams() {
   const filteredExams = exams.filter((exam) => {
     const nameMatch = exam.name.toLowerCase().includes(searchInput);
     const stateMatch = filterState === "all" || exam.state === filterState;
+
     return nameMatch && stateMatch;
   });
 
@@ -40,7 +41,7 @@ function renderExams() {
     examCard.classList.add("exam-card");
 
     let timeInfo = "";
-    if (exam.state === "specificTime") {
+    if (exam.state === "Specific Time") {
       const startDate = new Date(exam.startTime);
       const endDate = new Date(exam.endTime);
       const options = {
