@@ -1,18 +1,18 @@
 const exams = [
-  { name: "Practice Exam 1", category: "Practice", state: "joinAnytime" },
-  { name: "Practice Exam 2", category: "Practice", state: "joinAnytime" },
+  { name: "Practice Exam 1", category: "Practice", state: "Join Anytime" },
+  { name: "Practice Exam 2", category: "Practice", state: "Join Anytime" },
   {
     name: "Midterm Exam 1",
     category: "Midterm",
-    state: "specificTime",
+    state: "Specific Time",
     startTime: "2024-03-01T09:00:00",
     endTime: "2024-03-04T12:00:00",
   },
-  { name: "Midterm Exam 2", category: "Midterm", state: "joinAnytime" },
+  { name: "Midterm Exam 2", category: "Midterm", state: "Join Anytime" },
   {
     name: "Endterm Exam 1",
     category: "Endterm",
-    state: "specificTime",
+    state: "Specific Time",
     startTime: "2024-03-15T09:00:00",
     endTime: "2024-03-15T12:00:00",
   },
@@ -63,11 +63,11 @@ function renderExams() {
             <p>State: ${exam.state}</p>
             ${timeInfo}
             ${
-              exam.state === "specificTime"
+              exam.state === "Specific Time"
                 ? isWithinTimeRange(exam.startTime, exam.endTime)
                   ? `<button onclick="startExam('${exam.name}')">Start Exam</button>`
                   : `<button disabled>Unavailable</button>`
-                : exam.state === "joinAnytime"
+                : exam.state === "Join Anytime"
                 ? `<button onclick="startExam('${exam.name}')">Start Exam</button>`
                 : `<button disabled>Unavailable</button>`
             }
@@ -86,7 +86,8 @@ function isWithinTimeRange(startTime, endTime) {
 
 // Function to start an exam (dummy function)
 function startExam(examName) {
-  alert(`Starting ${examName} exam...`);
+  window.location.href = "../../exam/html/index.html";
+  alert(`Starting ${examName}...`);
   // Implement your logic to start the exam
 }
 
