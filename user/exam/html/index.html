@@ -3,14 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="styles.css">
-
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
 <title>Navigation Bar with Logo, Countdown, and Logout Button</title>
 </head>
+    
 <body>
     <nav>
         <ul>
-          <li class="logo"><a href="#">Thi PTIT</a></li>
+          <li class="logo">
+            <img
+            class="logo"
+            alt="OmniFood logo"
+            src="https://code.ptit.edu.vn/2020/images/logo_ptit.png"
+            />
+          </li>
           <li>
             <div id="countdown" class="countdown">
               <ul>
@@ -39,7 +45,7 @@
     </div>
     
     <div class="test">
-        <form class="testform" id="testForm" action="page.html" method="post">
+        <form class="testform" id="testForm" action="../../results/html/index.html" method="get">
             <div>
               <p>Question 1:</p>
               <label>
@@ -52,8 +58,9 @@
                 <input type="radio" name="question1" value="option3"> Option 3
               </label><br>
               <label>
-                <input type="radio" name="question1" value="option3"> Option 3
+                <input type="radio" name="question1" value="option4"> Option 4
               </label><br>
+              <input type="hidden" name="correct1" value="option2">
             </div>
             <br>
             <div>
@@ -68,8 +75,9 @@
                   <input type="radio" name="question2" value="option3"> Chức năng khoa học của các khoa học
                 </label><br>
                 <label>
-                    <input type="radio" name="question1" value="option3"> Chức năng thế giới quan và phương pháp luận
-                  </label><br>
+                  <input type="radio" name="question2" value="option4"> Chức năng thế giới quan và phương pháp luận
+                </label><br>
+                <input type="hidden" name="correct2" value="option2">
             </div>
             <br>
             <div>
@@ -84,8 +92,9 @@
                   <input type="radio" name="question3" value="option3"> Vấn đề quan hệ giữa con người và thế giới xung quanh
                 </label><br>
                 <label>
-                  <input type="radio" name="question3" value="option3"> Vấn đề logic cú pháp của ngôn ngữ
+                  <input type="radio" name="question3" value="option4"> Vấn đề logic cú pháp của ngôn ngữ
                 </label><br>
+                <input type="hidden" name="correct3" value="option2">
               </div>
               <br>
               <div>
@@ -100,8 +109,9 @@
                   <input type="radio" name="question4" value="option3"> Option 3
                 </label><br>
                 <label>
-                  <input type="radio" name="question4" value="option3"> Option 3
+                  <input type="radio" name="question4" value="option4"> Option 3
                 </label><br>
+                <input type="hidden" name="correct4" value="option2">
               </div>
               <br>
               <div>
@@ -116,8 +126,9 @@
                   <input type="radio" name="question5" value="option3"> Option 3
                 </label><br>
                 <label>
-                  <input type="radio" name="question5" value="option3"> Option 3
+                  <input type="radio" name="question5" value="option4"> Option 4
                 </label><br>
+                <input type="hidden" name="correct5" value="option2">
               </div>
               <br>
               <div>
@@ -132,8 +143,9 @@
                   <input type="radio" name="question6" value="option3"> Option 3
                 </label><br>
                 <label>
-                  <input type="radio" name="question6" value="option3"> Option 3
+                  <input type="radio" name="question6" value="option4"> Option 4
                 </label><br>
+                <input type="hidden" name="correct6" value="option2">
               </div>
               <br>
               <div>
@@ -148,8 +160,9 @@
                   <input type="radio" name="question7" value="option3"> Option 3
                 </label><br>
                 <label>
-                  <input type="radio" name="question7" value="option3"> Option 3
+                  <input type="radio" name="question7" value="option4"> Option 4
                 </label><br>
+                <input type="hidden" name="correct7" value="option2">
               </div>
               <br>
               <div>
@@ -164,8 +177,9 @@
                   <input type="radio" name="question8" value="option3"> Option 3
                 </label><br>
                 <label>
-                  <input type="radio" name="question8" value="option3"> Option 3
+                  <input type="radio" name="question8" value="option4"> Option 4
                 </label><br>
+                <input type="hidden" name="correct8" value="option2">
               </div>
             
             <!-- Add more divs for additional questions -->
@@ -174,5 +188,7 @@
           </form>
     
     </div>
-    <script src="testmain.js" defer></script>
+
+    <script src="../js/testmain.js" defer></script>
+
 </body>
