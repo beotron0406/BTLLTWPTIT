@@ -23,9 +23,7 @@ function countdownTimer() {
         window.location.href = "page.html";
         }
 
-    }, 1000);
-
-    
+    }, 1000); 
     
 }
 
@@ -38,8 +36,17 @@ function formatNumber(number){
 
 countdownTimer()
 
-document.getElementById("submitButton").addEventListener("click", function() {
-    document.getElementById("testForm").submit();
-    window.location.href = "page.html";
-  });
+document.getElementById('submitButton').addEventListener('click', function() {
+    var formData = new FormData(document.getElementById('testForm'));
+    var correctAnswers = document.querySelectorAll('input[type="hidden"]');
+    var score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+        if (formData.get('question' + (i+1)) === correctAnswers[i].value) {
+            score++;
+        }
+    }
+
+    window.location.href = '../../results/html/index.html?score=' + score;
+});
   
