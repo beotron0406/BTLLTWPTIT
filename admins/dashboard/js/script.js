@@ -220,9 +220,6 @@ function handleUserFormSubmit(event) {
 
 // Event listeners
 document
-  .getElementById("createExamBtn")
-  .addEventListener("click", () => openExamModal());
-document
   .getElementById("createUserBtn")
   .addEventListener("click", () => openUserModal());
 document
