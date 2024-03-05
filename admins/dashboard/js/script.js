@@ -104,7 +104,7 @@ function renderStatisticsTable() {
 }
 
 // Open exam modal
-function openExamModal(exam = null) {
+function openExamModal(exam = null, index = "") {
   const modal = document.getElementById("examModal");
   const form = document.getElementById("examForm");
 
@@ -114,23 +114,27 @@ function openExamModal(exam = null) {
     form.elements.examState.value = exam.state;
     form.elements.startTime.value = exam.startTime;
     form.elements.endTime.value = exam.endTime;
+    form.dataset.index = index; // Set index to form dataset
   } else {
     form.reset();
+    form.dataset.index = ""; // Reset index when adding new exam
   }
 
   modal.style.display = "block";
 }
 
 // Open user modal
-function openUserModal(user = null) {
+function openUserModal(user = null, index = "") {
   const modal = document.getElementById("userModal");
   const form = document.getElementById("userForm");
 
   if (user) {
     form.elements.userName.value = user.name;
     form.elements.userEmail.value = user.email;
+    form.dataset.index = index;
   } else {
     form.reset();
+    form.dataset.index = "";
   }
 
   modal.style.display = "block";
@@ -147,7 +151,7 @@ function closeModal() {
 // Edit exam
 function editExam(index) {
   const exam = exams[index];
-  openExamModal(exam);
+  openExamModal(exam, index); // Pass index to know which exam to update
 }
 
 // Delete exam
@@ -159,7 +163,7 @@ function deleteExam(index) {
 // Edit user
 function editUser(index) {
   const user = users[index];
-  openUserModal(user);
+  openUserModal(user, index);
 }
 
 // Delete user
@@ -172,6 +176,8 @@ function deleteUser(index) {
 function handleExamFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
+  const index = form.dataset.index; // Retrieve index from form dataset
+
   const exam = {
     name: form.elements.examName.value,
     category: form.elements.examCategory.value,
@@ -179,7 +185,13 @@ function handleExamFormSubmit(event) {
     startTime: form.elements.startTime.value,
     endTime: form.elements.endTime.value,
   };
-  exams.push(exam);
+
+  if (index !== "") { // If index exists, update existing exam
+    exams[index] = exam;
+  } else { // Otherwise, it's a new exam, so add it
+    exams.push(exam);
+  }
+
   renderExamTable();
   closeModal();
 }
@@ -188,11 +200,20 @@ function handleExamFormSubmit(event) {
 function handleUserFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
+  const index = form.dataset.index;
+
   const user = {
     name: form.elements.userName.value,
     email: form.elements.userEmail.value,
   };
-  users.push(user);
+
+  if(index !== ""){
+    users[index] = user;
+  }
+  else{
+    users.push(user);
+  }
+  
   renderUserTable();
   closeModal();
 }
