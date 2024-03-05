@@ -6,7 +6,10 @@ document.querySelector(".login__btn").addEventListener("click", function () {
   if (isValidPassword(password)) {
     // Password is valid
     console.log("Password is valid.");
-    alert("Password is valid.");
+    alert("Welcome!");
+
+    window.location.href = "../../main/html/index.html";
+
   } else {
     // Password is invalid
     console.log(
