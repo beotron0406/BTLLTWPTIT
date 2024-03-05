@@ -11,11 +11,20 @@ nav {
   z-index: 1000; /* Ensure it's on top of other content */
 }
 
-.logo {
-  height: 3.6rem;
+.header-logo .logo {
+  max-width: 1.5rem;
   background-color: white;
-  border-radius: 2px;
-  float: left;
+  border-radius: 50%;
+  padding: 3px 5px;
+  margin-left: 30px;
+}
+
+.test{
+  font-size: 1.2rem;
+}
+
+.test .questions{
+  font-weight: bold;
 }
 
 nav ul {
@@ -86,6 +95,7 @@ color: #f4f4f4;
   overflow: hidden;
   width: 30px;
   height: 30px;
+  margin: 10px;
 }
 .avatar {
   width: 100%; /* Ensure the image fills the container */
