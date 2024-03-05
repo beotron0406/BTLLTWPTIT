@@ -1,244 +1,125 @@
- // JavaScript code
- const exams = [
-  { name: "Practice Exam 1", category: "Practice", state: "joinAnytime" },
-  { name: "Practice Exam 2", category: "Practice", state: "joinAnytime" },
-  {
-    name: "Midterm Exam 1",
-    category: "Midterm",
-    state: "specificTime",
-    startTime: "2024-03-01T09:00:00",
-    endTime: "2024-03-04T12:00:00",
-  },
-  { name: "Midterm Exam 2", category: "Midterm", state: "joinAnytime" },
-  {
-    name: "Endterm Exam 1",
-    category: "Endterm",
-    state: "specificTime",
-    startTime: "2024-03-15T09:00:00",
-    endTime: "2024-03-15T12:00:00",
-  },
-];
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../general.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Exam Management Dashboard</title>
+  </head>
+  <body>
+    <header class="header margin-bot-sm">
+      <img
+        class="logo"
+        alt="Ptit"
+        src="https://code.ptit.edu.vn/2020/images/logo_ptit.png"
+      />
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a href="../../dashboard/html/index.html" class="main-nav-link">Dashboard</a></li>
+          <li><a href="../../login/html/index.html" class="nav-cta main-nav-link">Sign out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="warpping">
+      <h1 class="margin-bot-med">Exam Management Dashboard</h1>
 
-const users = [
-  { name: "John Doe", email: "john@example.com" },
-  { name: "Jane Smith", email: "jane@example.com" },
-  // Add more user data as needed
-];
+      <div class="margin-bot-med">
+        <h2 class="margin-bot-sm">Exam List</h2>
+        <table id="examTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>State</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Exam table rows will be dynamically populated here -->
+          </tbody>
+        </table>
+        <button id="createExamBtn">Create Exam</button>
+      </div>
 
-const statistics = [
-  {
-    exam: "Practice Exam 1",
-    participants: 50,
-    completionPercentage: 80,
-    averageScore: 85,
-  },
-  {
-    exam: "Midterm Exam 1",
-    participants: 100,
-    completionPercentage: 90,
-    averageScore: 75,
-  },
-  // Add more statistics data as needed
-];
+      <h2 class="margin-bot-sm">User List</h2>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- User table rows will be dynamically populated here -->
+        </tbody>
+      </table>
+      <button id="createUserBtn" class="margin-bot-med">Create User</button>
 
-// Render exam table
-function renderExamTable() {
-  const examTableBody = document
-    .getElementById("examTable")
-    .getElementsByTagName("tbody")[0];
-  examTableBody.innerHTML = "";
+      <h2 class="margin-bot-sm">Exam Statistics</h2>
+      <table id="statisticsTable">
+        <thead>
+          <tr>
+            <th>Exam</th>
+            <th>Participants</th>
+            <th>Completion %</th>
+            <th>Average Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Statistics table rows will be dynamically populated here -->
+        </tbody>
+      </table>
 
-  exams.forEach((exam, index) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-    <td>${exam.name}</td>
-    <td>${exam.category}</td>
-    <td>${exam.state}</td>
-    <td>
-      <button onclick="editExam(${index})">Edit</button>
-      <button onclick="deleteExam(${index})">Delete</button>
-    </td>
-  `;
-    examTableBody.appendChild(row);
-  });
-}
+      <!-- Exam Modal -->
+      <div id="examModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Create/Edit Exam</h3>
+          <form id="examForm">
+            <label for="examName">Name:</label>
+            <input type="text" id="examName" required /><br />
 
-// Render user table
-function renderUserTable() {
-  const userTableBody = document
-    .getElementById("userTable")
-    .getElementsByTagName("tbody")[0];
-  userTableBody.innerHTML = "";
+            <label for="examCategory">Category:</label>
+            <input type="text" id="examCategory" required /><br />
 
-  users.forEach((user, index) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-    <td>${user.name}</td>
-    <td>${user.email}</td>
-    <td>
-      <button onclick="editUser(${index})">Edit</button>
-      <button onclick="deleteUser(${index})">Delete</button>
-    </td>
-  `;
-    userTableBody.appendChild(row);
-  });
-}
+            <label for="examState">State:</label>
+            <select id="examState">
+              <option value="joinAnytime">Join Anytime</option>
+              <option value="specificTime">Specific Time</option></select
+            ><br />
 
-// Render statistics table
-function renderStatisticsTable() {
-  const statisticsTableBody = document
-    .getElementById("statisticsTable")
-    .getElementsByTagName("tbody")[0];
-  statisticsTableBody.innerHTML = "";
+            <label for="startTime">Start Time:</label>
+            <input type="datetime-local" id="startTime" /><br />
 
-  statistics.forEach((stat) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-    <td>${stat.exam}</td>
-    <td>${stat.participants}</td>
-    <td>${stat.completionPercentage}%</td>
-    <td>${stat.averageScore}</td>
-  `;
-    statisticsTableBody.appendChild(row);
-  });
-}
+            <label for="endTime">End Time:</label>
+            <input type="datetime-local" id="endTime" /><br />
 
-// Open exam modal
-function openExamModal(exam = null, index = "") {
-  const modal = document.getElementById("examModal");
-  const form = document.getElementById("examForm");
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
 
-  if (exam) {
-    form.elements.examName.value = exam.name;
-    form.elements.examCategory.value = exam.category;
-    form.elements.examState.value = exam.state;
-    form.elements.startTime.value = exam.startTime;
-    form.elements.endTime.value = exam.endTime;
-    form.dataset.index = index; // Set index to form dataset
-  } else {
-    form.reset();
-    form.dataset.index = ""; // Reset index when adding new exam
-  }
+      <!-- User Modal -->
+      <div id="userModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Create/Edit User</h3>
+          <form id="userForm">
+            <label for="userName">Name:</label>
+            <input type="text" id="userName" required /><br />
 
-  modal.style.display = "block";
-}
+            <label for="userEmail">Email:</label>
+            <input type="email" id="userEmail" required /><br />
 
-// Open user modal
-function openUserModal(user = null, index = "") {
-  const modal = document.getElementById("userModal");
-  const form = document.getElementById("userForm");
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-  if (user) {
-    form.elements.userName.value = user.name;
-    form.elements.userEmail.value = user.email;
-    form.dataset.index = index;
-  } else {
-    form.reset();
-    form.dataset.index = "";
-  }
-
-  modal.style.display = "block";
-}
-
-// Close modal
-function closeModal() {
-  const modals = document.getElementsByClassName("modal");
-  for (let i = 0; i < modals.length; i++) {
-    modals[i].style.display = "none";
-  }
-}
-
-// Edit exam
-function editExam(index) {
-  const exam = exams[index];
-  openExamModal(exam, index); // Pass index to know which exam to update
-}
-
-// Delete exam
-function deleteExam(index) {
-  exams.splice(index, 1);
-  renderExamTable();
-}
-
-// Edit user
-function editUser(index) {
-  const user = users[index];
-  openUserModal(user, index);
-}
-
-// Delete user
-function deleteUser(index) {
-  users.splice(index, 1);
-  renderUserTable();
-}
-
-// Handle exam form submission
-function handleExamFormSubmit(event) {
-  event.preventDefault();
-  const form = event.target;
-  const index = form.dataset.index; // Retrieve index from form dataset
-
-  const exam = {
-    name: form.elements.examName.value,
-    category: form.elements.examCategory.value,
-    state: form.elements.examState.value,
-    startTime: form.elements.startTime.value,
-    endTime: form.elements.endTime.value,
-  };
-
-  if (index !== "") { // If index exists, update existing exam
-    exams[index] = exam;
-  } else { // Otherwise, it's a new exam, so add it
-    exams.push(exam);
-  }
-
-  renderExamTable();
-  closeModal();
-}
-
-// Handle user form submission
-function handleUserFormSubmit(event) {
-  event.preventDefault();
-  const form = event.target;
-  const index = form.dataset.index;
-
-  const user = {
-    name: form.elements.userName.value,
-    email: form.elements.userEmail.value,
-  };
-
-  if(index !== ""){
-    users[index] = user;
-  }
-  else{
-    users.push(user);
-  }
-  
-  renderUserTable();
-  closeModal();
-}
-
-// Event listeners
-document
-  .getElementById("createExamBtn")
-  .addEventListener("click", () => openExamModal());
-document
-  .getElementById("createUserBtn")
-  .addEventListener("click", () => openUserModal());
-document
-  .getElementById("examForm")
-  .addEventListener("submit", handleExamFormSubmit);
-document
-  .getElementById("userForm")
-  .addEventListener("submit", handleUserFormSubmit);
-document
-  .getElementsByClassName("close")[0]
-  .addEventListener("click", closeModal);
-document
-  .getElementsByClassName("close")[1]
-  .addEventListener("click", closeModal);
-
-// Initial render
-renderExamTable();
-renderUserTable();
-renderStatisticsTable();
+    <script src="../js/script.js"></script>
+    
+  </body>
+</html>
