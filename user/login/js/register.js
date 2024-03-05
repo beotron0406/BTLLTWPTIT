@@ -16,8 +16,11 @@ document.querySelector(".register__btn").addEventListener("click", function () {
   }
 
   if (flag == true) {
-    console.log("Password is valid.");
-    alert("Password is valid.");
+    console.log("Account is valid.");
+    alert("Account created!");
+
+    window.location.href = "../html/index.html";
+    
   } else {
     console.log(
       "Password is invalid. It must have at least 1 uppercase letter, 1 lowercase letter, 1 number, and be 8 characters long."
