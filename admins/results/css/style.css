@@ -113,7 +113,7 @@ th, td{
 }
 
 .results-table {
-    display: none;
+  display: none;
 }
 
 .table{
@@ -124,4 +124,18 @@ th, td{
     margin-right: auto;
     width: 60%;
     padding: 20px;
+}
+
+.show-details{
+  font-size: 16px;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.show-details:hover{
+  background-color: #940000;
+  cursor: pointer;
 }

@@ -10,7 +10,11 @@ document.querySelector(".login__btn").addEventListener("click", function () {
 
     window.location.href = "../../main/html/index.html";
 
-  } else {
+  } 
+  else if(account == "" || password == ""){
+    alert("Please enter both Username and Password!");
+  }
+  else {
     // Password is invalid
     console.log(
       "Password is invalid. It must have at least 1 uppercase letter, 1 lowercase letter, 1 number, and be 8 characters long."
