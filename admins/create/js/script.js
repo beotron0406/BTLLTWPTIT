@@ -3,10 +3,8 @@ const questionForm = document.querySelector(".question__main__form");
 const questionContainer = document.querySelector(".ctn");
 const importFileInput = document.getElementById("importFile");
 
-
 questionForm.addEventListener("submit", (event) => {
-  event.preventDefault(); 
-
+  event.preventDefault();
 
   const question = document.getElementById("question").value;
   const answers = [];
@@ -48,8 +46,12 @@ function createQuestionElements(question, answers, correctAnswers) {
 
   answers.forEach((answer) => {
     const answerElement = document.createElement("p");
-    answerElement.textContent = answer;
-    if (correctAnswers.includes(answer)) {
+    answerElement.textContent = answer.startsWith("*")
+      ? answer.slice(1)
+      : answer;
+    if (
+      correctAnswers.includes(answer.startsWith("*") ? answer.slice(1) : answer)
+    ) {
       answerElement.classList.add("correct__ans__green");
     }
     answerContainer.appendChild(answerElement);
@@ -114,28 +116,38 @@ function deleteQuestion(questionElement, answerContainer, buttonContainer) {
 // Function to import questions from a file
 function importQuestions(file) {
   const fileReader = new FileReader();
+  const fileExtension = file.name.split(".").pop().toLowerCase();
 
   fileReader.onload = () => {
-    const fileContent = fileReader.result;
-    const lines = fileContent.split("\n");
+    const data = new Uint8Array(fileReader.result);
+    const workbook = XLSX.read(data, { type: "array" });
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
-    for (let i = 0; i < lines.length; i += 5) {
-      const question = lines[i];
-      const answers = lines
-        .slice(i + 1, i + 5)
-        .map((answer) => (answer.startsWith("*") ? answer.slice(1) : answer));
-      const correctAnswers = answers.filter((answer) => answer.startsWith("*"));
+    const questions = XLSX.utils.sheet_to_json(worksheet, {
+      header: 1,
+      blankRows: false,
+    });
+
+    questions.forEach((question) => {
+      const [questionText, ...answers] = question;
+      const correctAnswers = answers
+        .filter((answer) => answer.startsWith("*"))
+        .map((answer) => answer.slice(1));
 
       const [questionElement, answerContainer, buttonContainer] =
-        createQuestionElements(question, answers, correctAnswers);
+        createQuestionElements(questionText, answers, correctAnswers);
 
       questionContainer.appendChild(questionElement);
       questionContainer.appendChild(answerContainer);
       questionContainer.appendChild(buttonContainer);
-    }
+    });
   };
 
-  fileReader.readAsText(file);
+  if (fileExtension === "xlsx") {
+    fileReader.readAsArrayBuffer(file);
+  } else {
+    console.error("Please select an Excel (.xlsx) file.");
+  }
 }
 
 // Event listener for importing questions
@@ -143,3 +155,8 @@ importFileInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   importQuestions(file);
 });
+
+function create(){
+  alert("Create successfully!")
+  window.location.href = "../../dashboard/html/index.html";
+}
