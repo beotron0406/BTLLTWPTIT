@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../../general.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <title>Main page</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ học sinh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <ul class="navbar">
+        <li>
+            <div class="logo-container">
+                <img class="logo" src="https://code.ptit.edu.vn/2020/images/logo_ptit.png" alt="Logo">
+            </div>
+        </li>
+        <li><a class="active" href="#">Bài thi</a></li>
+        <li><a href="#">Kết quả</a></li>
+        <li><a href="#" class="logout-btn"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+    </ul>
 
-  <body>
-    <header class="header">
-      <img
-        class="logo"
-        alt="OmniFood logo"
-        src="https://code.ptit.edu.vn/2020/images/logo_ptit.png"
-      />
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li><a href="index.html" class="main-nav-link">Exams</a></li>
-          <li><a href="../../login/html/index.html" class="nav-cta main-nav-link">Sign out</a></li>
-        </ul>
-      </nav>
-    </header>
-    
     <div class="container">
-      <h1 class="exam__page">Exam Page</h1>
+        <div class="user-pf">
+            <img class="pfp" src="../../../pfp.png">
+            
+            <div class="dropdown">
+                <button class="dropbtn">Username <i class="fa fa-angle-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Hồ sơ</a>
+                </div>
+            </div>
+            
+        </div>
 
-      <input type="text" id="searchInput" placeholder="Search exams by name" />
-      <select id="filterState">
-        <option value="all">All</option>
-        <option value="Join Anytime">Join Anytime</option>
-        <option value="Specific Time">Specific Time</option>
-      </select>
+        <div class="main-content">
+            <h1>Các bài thi</h1>
+
+            <label for="searchInput">Tên bài thi</label>
+            <input class="search" type="text" id="searchInput" placeholder="Nhập tên" />
+
+            <select class="filter" id="filterState">
+                <option value="all">Tất cả</option>
+                <option value="anytime">Thời gian bất kỳ</option>
+                <option value="specific-time">Thời gian cụ thể</option>
+            </select>
+
+            <div class="warp__list container">
+                <div id="examsList">
+                  <!--api thêm các test, với class là exam card vào đây-->
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="warp__list container">
-      <div id="examsList">
-        <!-- Exam cards will be dynamically added here -->
-      </div>
-    </div>
-    <script src="../js/script.js"></script>
-  </body>
+    
+</body>
 </html>
