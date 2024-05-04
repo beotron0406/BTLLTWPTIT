@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../../general.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Admin Login</title>
+    <title>Đăng nhập giáo viên</title>
   </head>
   <body>
     <div class="cta-text-box">
@@ -22,49 +22,31 @@
             <div class="row">
                 <div class="col">
                     <div class="login__main__title">
-                        <p>Admin Login</p>
+                        <p>Đăng nhập</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
+
                     <form action="" class="login__main__form" method="post">
                         <div class="login__flex">
-                            <label for="login__user">Username</label>
-                            <input
-                            type="text"
-                            name="username"
-                            id="login__user"
-                            value=""
-                            autofocus=""
-                            />
+                            <label for="login__user">Tài khoản</label>
+                            <input type="text" name="username" id="login__user"/>
                         </div>
                         <div class="login__flex">
-                            <label for="login__pw">Password</label>
-                            <input
-                            type="password"
-                            name="password"
-                            id="login__pw"
-                            />
+                            <label for="login__pw">Mật khẩu</label>
+                            <input type="password" name="password" id="login__pw"/>
                         </div>
-                        <div class="login__flex horizontal">
-                            <div class="checkbox__login">
-                            <input
-                                type="checkbox"
-                                value="1"
-                                name="remember"
-                                id="login__checkbox"
-                            />
-                            <label class="cb__label" for="login__checkbox">Remember me</label>
-                            </div>
-                        </div>
-                        <button type="button" class="login__btn"><span>Login</span></button>
+
+                        <button type="submit" class="login__btn"><span>Đăng nhập</span></button>
 
                         <div class="login__margin__top account">
-                            <p>You are a student? <a href="../../../user/login/html/index.html">Click here</a></p>
+                            <p>Bạn là sinh viên? <a href="../../../user/login/html/index.html">Nhấn vào đây</a></p>
                         </div>
                     </form>
+
                 </div>
             </div>
 
