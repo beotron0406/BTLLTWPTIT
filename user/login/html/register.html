@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../../general.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Sign up</title>
+    <title>Đăng ký học sinh</title>
   </head>
   <body>
     <div class="cta-text-box">
+
       <div class="login__main">
         <div class="login__logo">
           <img
@@ -19,49 +20,42 @@
         <div class="row">
           <div class="col">
             <div class="login__main__title">
-              <p>Create account</p>
+              <p>Đăng ký tài khoản mới</p>
             </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col">
+
             <form action="" class="login__main__form" method="post">
               <div class="login__flex">
-                <label for="register__user">Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  id="register__user"
-                  value=""
-                  autofocus=""
-                />
+                <label for="register__user">Tài khoản</label>
+                <input type="text" name="username" id="register__user" value=""/>
               </div>
               <div class="login__flex">
-                <label for="register__pw">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="register__pw"
-                />
+                <label for="register__pw">Mật khẩu</label>
+                <input type="password" name="password" id="register__pw"/>
               </div>
               <div class="login__flex">
-                <label for="register__pw__again">Re-enter Password</label>
-                <input
-                  type="password"
-                  name="password__again"
-                  id="register__pw__again"
-                />
+                <label for="register__pw__again">Nhập lại mật khẩu</label>
+                <input type="password" name="password__again" id="register__pw__again"/>
               </div>
               
-              <button type="button" class="register__btn"><span>Create new account</span></button>
+              <button type="submit" class="register__btn"><span>Đăng ký</span></button>
 
               <div class="login__margin__top account">
-                <p>Already had an account? <a href="index.html">Login</a></p>
+                <p>Đã có tài khoản? <a href="index.html">Đăng nhập</a></p>
             </form>
+            
           </div>
         </div>
+
       </div>
+
     </div>
+
     <script src="../js/register.js"></script>
+
   </body>
 </html>
