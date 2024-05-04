@@ -1,8 +1,6 @@
 .login__flex {
-  display: flex;
   flex-direction: column;
   gap: 5px;
-
   margin-bottom: 1rem;
 }
 
@@ -10,22 +8,14 @@
   margin-top: 1.8rem;
 }
 
-.login__logo {
-  width: auto;
-}
-
 .login__main__form {
   display: flex;
   flex-direction: column; /* Stack items vertically */
 }
 
-.horizontal {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .login__main {
-  padding: 6.4rem 8.4rem 8.4rem 8.4rem;
+  width: 500px;
+  padding: 20px;
   color: #45260a;
   position: absolute;
   top: 50%;
@@ -33,19 +23,23 @@
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center; /* Horizontally center items */
-  align-items: center; /* Vertically center items */
   flex-direction: column; /* Stack items vertically */
 
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.5s;
+}
+
+.login__logo {
+  text-align: center;
 }
 
 .login__main__title {
   font-size: 2.4rem;
   margin-top: 2.4rem;
   margin-bottom: 1.6rem;
+  text-align: center;
 }
 
 .login__main__form label {
@@ -55,18 +49,10 @@
 .login__main__form input[type="text"],
 .login__main__form input[type="password"] {
   width: 100%;
-  padding: 2px; /* Adjust padding as needed */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.login__main__forgetpass {
-  font-size: 1.2rem;
-  justify-self: center;
-}
-
-.cb__label {
-  font-size: 1.2rem !important;
-  align-self: flex-start;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; 
 }
 
 .login__main__form button {
