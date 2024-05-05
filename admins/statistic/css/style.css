@@ -4,11 +4,7 @@ body {
 
 /* header section */
 
-.logo {
-  height: 3.6rem;
-  background-color: white;
-  border-radius: 2px;
-}
+
 
 .header {
   display: flex;
@@ -63,10 +59,10 @@ body {
   margin-top: 3.6rem;
   margin-bottom: 1.6rem;
 }
-/* *************************** */
 
 .filters {
-  margin: 2rem;
+  margin: 4rem;
+  
 }
 
 .filters label {
@@ -100,4 +96,47 @@ button {
 
 #export-btn {
   margin: 1.2rem 2.4rem;
+}
+.left-sidebar {
+  background-color: #c92127; /* Màu đỏ */
+  color: #fff; /* Màu chữ trắng */
+  padding: 20px;
+  width: 200px; /* Đặt chiều rộng tùy ý */
+  height: 100vh; /* Đặt chiều cao bằng chiều cao của viewport */
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar-buttons button {
+  background-color: #fa4444;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.sidebar-buttons button:hover {
+  background-color: #fe8787;
+}
+main {
+  padding-left: 220px; /* Khoảng cách giữa main content và cột bên trái */
+}
+.search-sidebar{
+  background-color: #d6d5d5;
+  width: 100%;
+    margin-bottom: 10px;
+    text-align: left; 
+    line-height: 50px;
 }
