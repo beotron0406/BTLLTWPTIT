@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Exam Results</title>
-    <link rel="stylesheet" href="../../../general.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <img
-        class="logo"
-        alt="ptit"
-        src="https://code.ptit.edu.vn/2020/images/logo_ptit.png"
-      />
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li><a href="../../dashboard/html/index.html" class="main-nav-link">Dashboard</a></li>
-          <li><a href="../../create/html/index.html" class="main-nav-link">Create</a></li>
-          <li><a href="../../results/html/index.html" class="main-nav-link">Results</a></li>
-          <li><a href="../../statistic/html/index.html" class="main-nav-link">Statistics</a></li>
-          <li><a href="../../login/html/index.html" class="nav-cta main-nav-link">Sign out</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../general.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <title>📘 Results</title>
+</head>
+<body>
+    <main class="main">
+      <head class="header">
+      </header>
+    <aside class="search-sidebar">
     <div class="filters">
       <label for="exam-filter">Filter by Exam:</label>
       <select id="exam-filter">
@@ -31,26 +20,54 @@
       </select>
       <label for="date-filter">Filter by Date:</label>
       <input type="date" id="date-filter" />
+      <button form="Search">search</button>
     </div>
-    <div class="res__table">
-      <table id="results-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Exam</th>
-            <th>Entries</th>
-            <th>Completion %</th>
-            <th>Avg. Point</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <button id="export-btn">Export to PDF</button>
+  </aside>
+      <aside class="left-sidebar">
+        <div class="sidebar-buttons">
+          <a href="../../dashboard/html/index.html" class="button-link">
+            <button class="sidebar-button">Dashboard</button>
+          </a>
+        <a href="../../create/html/index.html" class="button-link">
+          <button class="sidebar-button">Create</button>
+        </a>
+          <a href="../../results/html/index.html" class="button-link">
+             <button class="sidebar-button">Results</button>
+           </a>
+        <a href="../../statistic/html/index.html" class="button-link">
+            <button class="sidebar-button">Statistics</button>
+        </a>
+            <a href="../../login/html/index.html" class="button-link">
+              <button class="sidebar-button">Sign out</button>
+            </a>  
+        </div>
+      </aside>
+      <div class="res__table">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Exam</th>
+              <th>Entries</th>
+              <th>Completion %</th>
+              <th>Avg. Point</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button id="export-btn">Export to PDF</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <script src="../js/script.js"></script>
-  </body>
+  </div>
+  
+      </head>
+    </main>
+</body>
 </html>
+
+
+
+
