@@ -1,3 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
 .login__flex {
   flex-direction: column;
   gap: 5px;
@@ -14,7 +31,7 @@
 }
 
 .login__main {
-  width: 500px;
+  width: 400px;
   padding: 20px;
   color: #45260a;
   position: absolute;
@@ -24,10 +41,8 @@
   display: flex;
   justify-content: center; /* Horizontally center items */
   flex-direction: column; /* Stack items vertically */
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-radius: 11px;
-  overflow: hidden;
   transition: all 0.5s;
 }
 
@@ -52,10 +67,10 @@
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; 
 }
 
 .login__main__form button {
+  font-size: 16px;
   margin-top: 2rem;
   box-sizing: border-box;
   padding: 1.6rem 3.2rem;
@@ -69,7 +84,12 @@
   font-size: 1.4rem;
 }
 
-.login__btn:hover,
-.register__btn:hover {
+.account a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.login__btn:hover {
   cursor: pointer;
 }
